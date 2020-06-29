@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+<!-- title -->
+{% block title %} User {% endblock %}
+<!-- content -->
+{% block content %}
+<!-- list of users -->
+<div style="display: flex;">
+    <div>
+        <img src="{{user.image_url}}" alt="pic" style="width: 200px; height: 200px;">
+    </div>
+    <div>
+        <div>
+            {{user.get_full_name()}}
+        </div>
+        <div style="display: flex;">
+            <form action="/users/{{user.id}}/edit">
+                <button>Edit</button>
+            </form>
+            <form action="/users/{{user.id}}/delete" method="POST">
+                <button>Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
