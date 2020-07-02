@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 <!-- title -->
-{% block title %} Users: {% endblock %}
+{% block title %} Users {% endblock %}
 <!-- content -->
 {% block content %}
+<!-- flash message when user is added/deleted -->
+{% for msg in get_flashed_messages() %}
+<p class="bg-{{bg_color}}" id="flash-msg">{{msg}}</p>
+{% endfor %}
 <!-- list of users -->
-<ul>
+<ul class="users_list">
     {%for user in users %}
-    <li><a href="/users/{{user.id}}"> {{user.id}} {{user.get_full_name()}}</a></li>
+    <li><a href="/users/{{user.id}}"> {{user.get_full_name}}</a></li>
     {% endfor %}
 </ul>
 <form action="/users/new">

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+<!-- title -->
+{% block title %}
+<div class="container-fluid"> Post </div> {% endblock %}
+<!-- content -->
+{% block content %}
+<div class="d-flex justify-content-start">
+    <div>
+        <div>
+            <h3>{{post.title}}</h3>
+        </div>
+        <p>{{post.content}}</p>
+        <div style="display: flex;">
+            <form action="/posts/{{post.id}}/edit">
+                <button class="bg-primary edit">Edit</button>
+            </form>
+            <form action="/posts/{{post.id}}/delete" method="POST">
+                <button class="bg-danger delete">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

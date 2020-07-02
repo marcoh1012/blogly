@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %} Create User {% endblock %}
+<!-- create user form -->
+{% block content %}
+<form action="/users/{{user_id}}/posts/new" method="POST">
+    <label for="title">Title: </label>
+    <input type="text" name="title" id="title"><br>
+    <label for="content">Content: </label>
+    <input type="text" name="content" id="content"><br>
+    <div>
+        <button type="submit"> Post</button>
+        <button formaction="/" value="/" type="submit"> Cancel </button>
+    </div>
+</form>
+{% endblock %}

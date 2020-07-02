@@ -6,20 +6,32 @@
 <!-- list of users -->
 <div style="display: flex;">
     <div>
-        <img src="{{user.image_url}}" alt="pic" style="width: 200px; height: 200px;">
+        <img src="{{user.image_url}}" alt="pic" class='img' style=" ">
     </div>
     <div>
-        <div>
-            {{user.get_full_name()}}
+        <div class="usr_name">
+            {{user.get_full_name}}
         </div>
         <div style="display: flex;">
             <form action="/users/{{user.id}}/edit">
-                <button>Edit</button>
+                <button class="bg-primary edit">Edit</button>
             </form>
             <form action="/users/{{user.id}}/delete" method="POST">
-                <button>Delete</button>
+                <button class="bg-danger delete">Delete</button>
             </form>
         </div>
     </div>
+</div>
+<!-- print user posts -->
+<br>
+<div class="posts">
+    <h2>Posts</h2>
+    <ul>
+        {% for post in posts %}
+        <li><a href="/posts/{{post.id}}">{{post.title}}</a></li> {% endfor %}
+    </ul>
+    <form action="/users/{{user.id}}/posts/new" method="GET">
+        <button class="bg-primary Edit">Add Post</button>
+    </form>
 </div>
 {% endblock %}

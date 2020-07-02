@@ -1,0 +1,54 @@
+html,
+body {
+    background-color: darkblue;
+}
+
+.container {
+    background-color: lightblue
+}
+
+#flash-msg {
+    border: solid black 2px;
+    border-radius: 5px;
+    position: relative;
+    right: 10px;
+}
+
+.users_list {
+    position: relative;
+    right: 50px;
+}
+
+.users_list li {
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.users_list li a {
+    color: black !important;
+}
+
+h1 {
+    text-decoration: underline;
+}
+
+
+/* user info page */
+
+.usr_name {
+    font-size: 64px;
+}
+
+.img {
+    width: 200px;
+    height: 200px;
+    border: solid black 2px;
+    margin-bottom: 5px;
+}
+
+.edit,
+.delete {
+    margin: 4px;
+}
